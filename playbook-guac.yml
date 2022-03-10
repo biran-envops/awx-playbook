@@ -1,0 +1,23 @@
+name: REST call to guac
+hosts: localhost
+connection: local
+
+tasks:
+  - name: GET AuthToken
+    uri:
+      url: http://ec2-54-87-66-8.compute-1.amazonaws.com:32001/guacamole/api/tokens
+      method: POST
+      headers:
+        Content-Type: "application/json"
+      body_format: json
+      status_code:
+        - 200
+      body: ({
+            "username": "guacadmin",
+            "password": "guacadmin"
+            })
+    register: response
+  - debug:
+      var: response
+      
+      
