@@ -3,5 +3,5 @@
   shell:
     " ping -c 10 google.com > /dev/null && echo 'up' || echo 'no' "
   register: out
-  debug:
+- debug:
     var: out
