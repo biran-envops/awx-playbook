@@ -1,3 +1,3 @@
 - name: ping
   shell:
-    "sudo ping google.com"
+    "sleep 300"
