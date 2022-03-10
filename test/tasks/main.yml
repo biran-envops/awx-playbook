@@ -1,3 +1,4 @@
 - name: ping
+  become_user: root
   shell:
-    "cat /etc/hosts"
+    "ping google.com"
